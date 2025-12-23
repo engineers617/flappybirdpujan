@@ -12,7 +12,7 @@ let birdImage = null;
 let pipeImage = new Image();  // For the pipe image
 
 // Load the pipe image (Make sure this path is correct!)
-pipeImage.src = "images/1757063785554.jpg";  
+pipeImage.src = "1757063785554.jpg";  
 
 let bird = {
     x: 50,
@@ -220,4 +220,5 @@ function loop() {
     requestAnimationFrame(loop);
 }
 // Start the main loop
+
 loop();
