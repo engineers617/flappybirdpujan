@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUVED Flappy Bird</title>
+    <style>
+        body { margin: 0; overflow: hidden; background: #1e1f29; }
+        canvas { display: block; margin: auto; background: #222230; }
+
+        /* Landing Menu */
+        #menu {
+            position: absolute;
+            inset: 0;
+            background: #1e1f29;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            user-select: none;
+        }
+
+        /* Logo */
+        #logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 36px;
+            font-family: Arial Black;
+            color: #ffcc00;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+
+        /* Settings icon */
+        #settings {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 32px;
+            cursor: pointer;
+            color: white;
+        }
+        #settings:hover { color: #ffcc00; }
+
+        /* Fancy Play Button */
+        #playBtn {
+            margin-top: 60px;
+            padding: 20px 60px;
+            font-size: 32px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffcc00, #ff8800);
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            color: black;
+            box-shadow: 0 0 25px rgba(255,200,0,0.5);
+            transition: 0.2s;
+        }
+        #playBtn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(255,200,0,0.8);
+        }
+
+        /* Settings box */
+        #settingsPanel {
+            display: none;
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            padding: 20px;
+            background: #333344;
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.4);
+            color: white;
+            font-family: Arial;
+        }
+
+        input { margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div id="logo">SUVED</div>
+
+<div id="menu">
+    <div id="settings">⚙️</div>
+
+    <button id="playBtn">PLAY</button>
+
+    <div id="settingsPanel">
+        <div><b>Upload Bird Image:</b></div>
+        <input type="file" id="birdUpload" accept="image/*">
+
+        <div style="margin-top:10px;"><b>Or Bird Image URL:</b></div>
+        <input type="text" id="birdURL" placeholder="https://example.com/bird.png">
+        <button onclick="applyBirdURL()" style="margin-top:10px;">Apply</button>
+    </div>
+</div>
+
+<canvas id="game" width="400" height="600"></canvas>
+
+<!-- Include your external JavaScript file here -->
+<script src="game.js"></script>
+
+</body>
+</html>
